@@ -158,6 +158,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
     libdisplayconfig \
+    libdisplayconfig.vendor \
+    libqdMetaData.vendor \
     liboverlay \
     libqdMetaData.system \
     libgenlock \
@@ -447,7 +449,9 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
-    libnl
+    libnl \
+    libaacwrapper \
+    libwfdaac
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
