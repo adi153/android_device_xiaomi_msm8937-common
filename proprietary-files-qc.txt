@@ -232,6 +232,16 @@ vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da
 vendor/lib/vendor.qti.hardware.dsp@1.0.so|3326828ea7f6f8139429d2cd0379e80f5ca5178d
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so|95b26a4a29f1443ec389be6ca80151a0aec96b36
 
+# DRM - from Redmi/lmi/lmi:11/RKQ1.200826.002/20.10.19:user/release-keys
+vendor/lib64/libops.so|b2223e64db9d8f84262da7a8621013d3c63b6c98
+vendor/lib64/libspl.so|0fa8c0711f72fc8a914dce044cf8dddd79ee62e1
+
+# DRM (Widevine) - from Redmi/lmi/lmi:11/RKQ1.200826.002/20.10.19:user/release-keys
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|2230b35e2d067ba92496cae131b00fd1bbc812c2
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|6a777556a80797c6c836d73885e0bcef5bbbfe54
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
+vendor/lib64/libwvhidl.so|07a8861d3aa01ba535b7a1af808e012ba1dbe229
+
 # Gatekeeper - from LA.UM.8.6.2.r1-08100-89xx.0
 vendor/lib/hw/gatekeeper.msm8937.so|f33d89c54a0423023d8e5ac884bcbaf1b9f5c11c
 vendor/lib64/hw/gatekeeper.msm8937.so|710afb0bd16813f3dfa4e42c31a9307e3753f364
@@ -739,10 +749,7 @@ vendor/lib/vendor.qti.voiceprint@1.0.so|12902f4d42e5b228cf4b80dc3e9631ace8fcf86e
 vendor/lib64/vendor.qti.voiceprint@1.0.so|2ecc0dc149b2231cb17334a3515eba1c36fc301a
 
 # Widevine - from Olive 10/QKQ1.191014.001
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|b626d9bbf7043c66c8ef903c9d0e5183fc47388d
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|f206aecdd6843795f6448bb6d44d2244b3e48815
 vendor/lib/mediadrm/libwvdrmengine.so|1518cd1f541d12b58e637735c43d0bbde52e7da7
-vendor/lib64/libwvhidl.so|ff0ab94da018b3249080e3e7d65c3aa0e1c66ff3
 vendor/lib64/mediadrm/libwvdrmengine.so|422e593d78f8f6abc148e1239e628bdfe04d9ddd
 
 # Wi-Fi - from Tissot
