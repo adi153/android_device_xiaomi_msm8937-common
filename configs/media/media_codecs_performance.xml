@@ -66,7 +66,7 @@
             <Limit name="measured-frame-rate-1920x1080" range="12-12" />
         </MediaCodec>
         <MediaCodec name="c2.android.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="53-54" />
+            <Limit name="measured-frame-rate-320x180" range="55-58" />
             <Limit name="measured-frame-rate-640x360" range="51-52" />
             <Limit name="measured-frame-rate-1280x720" range="17-24" />
             <Limit name="measured-frame-rate-1920x1080" range="8-12" />
@@ -143,7 +143,7 @@
             <Limit name="measured-frame-rate-352x288" range="172-175" />
         </MediaCodec>
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
-             <Limit name="measured-frame-rate-176x144" range="360-375" />
+             <Limit name="measured-frame-rate-176x144" range="896-955" />
              <Limit name="measured-frame-rate-352x288" range="689-670" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
