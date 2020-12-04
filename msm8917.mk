@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/msm8917-common/msm8917-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -309,7 +309,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Properties
--include device/xiaomi/msm8937-common/prop.mk
+-include device/xiaomi/msm8917-common/prop.mk
 
 # QMI
 PRODUCT_PACKAGES += \
