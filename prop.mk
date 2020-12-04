@@ -141,7 +141,11 @@ vendor.vidc.enc.narrow.searchrange=1
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_enable=true\
+ro.lmk.use_psi=true \
+ro.lmk.psi_complete_stall_ms=200 \
+ro.lmk.thrashing_limit=30 \
+ro.lmk.swap_util_max=100
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
