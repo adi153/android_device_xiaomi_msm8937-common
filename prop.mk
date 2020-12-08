@@ -143,13 +143,36 @@ vendor.vidc.enc.disable_bframes=1 \
 vendor.video.disable.ubwc=1 \
 vendor.vidc.enc.narrow.searchrange=1
 
+# LMK
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.lmk.low=1001 \
+ro.lmk.medium=800 \
+ro.lmk.critical=0 \
+ro.lmk.critical_upgrade=false \
+ro.lmk.upgrade_pressure=100 \
+ro.lmk.downgrade_pressure=100 \
+ro.lmk.kill_heaviest_task=true \
+ro.lmk.kill_timeout_ms=100 \
+ro.lmk.use_minfree_levels=true
+
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.sys.fw.bservice_enable=true\
 ro.lmk.use_psi=true \
 ro.lmk.psi_complete_stall_ms=200 \
 ro.lmk.thrashing_limit=30 \
-ro.lmk.swap_util_max=100
+ro.lmk.swap_util_max=100 \
+ro.sys.fw.bg_apps_limit=30 \
+ro.vendor.qti.sys.fw.bg_apps_limit=30 \
+ro.config.sdha_apps_bg_max=64 \
+ro.config.sdha_apps_bg_min=8 \
+ro.sys.fw.bg_cached_ratio=0.33 \
+ro.config.sdha_apps_bg_max=64 \
+ro.config.sdha_apps_bg_min=8 \
+ro.sys.fw.bg_cached_ratio=0.33 \
+ro.sys.fw.mOomMinFree4=146880 \
+ro.sys.fw.mOomMinFree5=215000 \
+ro.sys.fw.mOomMinFree6=398048
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
