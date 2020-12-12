@@ -69,6 +69,8 @@ persist.debug.coresight.config=stm-events
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+ro.hwui.use_vulkan=false\
+persist.graphics.vulkan.disable=true \
 debug.egl.hw=0 \
 debug.enable.sglscale=1 \
 debug.gralloc.enable_fb_ubwc=1 \
@@ -85,7 +87,7 @@ persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=267 \
+ro.sf.lcd_density=320 \
 ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.disable_skip_validate=1 \
@@ -102,7 +104,8 @@ ro.fm.transmitter=false
 
 # Framebuffer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.protected_contents=true
 
 # Frp
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -113,20 +116,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 persist.gps.qc_nlp_in_use=1 \
 persist.loc.nlp_name=com.qualcomm.location \
 ro.gps.agps_provider=1
-
-# HWUI
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.hwui.texture_cache_size=72 \
-ro.hwui.layer_cache_size=48 \
-ro.hwui.r_buffer_cache_size=8 \
-ro.hwui.path_cache_size=32 \
-ro.hwui.gradient_cache_size=1 \
-ro.hwui.drop_shadow_cache_size=6 \
-ro.hwui.texture_cache_flushrate=0.4 \
-ro.hwui.text_small_cache_width=1024 \
-ro.hwui.text_small_cache_height=1024 \
-ro.hwui.text_large_cache_width=2048 \
-ro.hwui.text_large_cache_height=1024
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,15 +152,10 @@ ro.lmk.use_minfree_levels=true
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.sys.fw.bservice_enable=true\
+ro.vendor.qti.am.reschedule_service=true\
 ro.lmk.use_psi=true \
-ro.lmk.psi_complete_stall_ms=200 \
-ro.lmk.thrashing_limit=30 \
-ro.lmk.swap_util_max=100 \
-ro.sys.fw.bg_apps_limit=30 \
-ro.vendor.qti.sys.fw.bg_apps_limit=30 \
-ro.config.sdha_apps_bg_max=64 \
-ro.config.sdha_apps_bg_min=8 \
-ro.sys.fw.bg_cached_ratio=0.33 \
+ro.sys.fw.bg_apps_limit=50 \
+ro.vendor.qti.sys.fw.bg_apps_limit=50 \
 ro.config.sdha_apps_bg_max=64 \
 ro.config.sdha_apps_bg_min=8 \
 ro.sys.fw.bg_cached_ratio=0.33 \
