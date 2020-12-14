@@ -2464,7 +2464,6 @@ case "$target" in
                 # Enable timer migration to little cluster
                 echo 1 > /proc/sys/kernel/power_aware_timer_migration
                 # Set Memory parameters
-		configure_zram_parameters
                 configure_memory_parameters
                 ;;
                 *)
