@@ -96,9 +96,9 @@ persist.debug.wfd.enable=1 \
 persist.demo.hdmirotationlock=false \
 persist.hwc.enable_vds=1 \
 persist.hwc.mdpcomp.enable=true \
-ro.opengles.version=196610 \
+ro.opengles.version=196608 \
 ro.qualcomm.cabl=0 \
-ro.sf.lcd_density=320 \
+ro.sf.lcd_density=309 \
 ro.vendor.display.cabl=2 \
 sdm.debug.disable_skip_validate=1 \
 vendor.display.disable_skip_validate=1 \
@@ -150,26 +150,16 @@ vendor.vidc.enc.narrow.searchrange=1
 
 # LMK
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.lmk.low=1001 \
-ro.lmk.medium=800 \
-ro.lmk.critical=0 \
-ro.lmk.critical_upgrade=false \
-ro.lmk.upgrade_pressure=100 \
-ro.lmk.downgrade_pressure=100 \
-
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.qti.sys.fw.bservice_enable=true\
-ro.vendor.qti.am.reschedule_service=true\
+ro.lmk.use_minfree_levels=false \
 ro.lmk.use_psi=true \
-ro.sys.fw.bg_apps_limit=50 \
-ro.vendor.qti.sys.fw.bg_apps_limit=50 \
-ro.config.sdha_apps_bg_max=64 \
-ro.config.sdha_apps_bg_min=8 \
-ro.sys.fw.bg_cached_ratio=0.33 \
-ro.sys.fw.mOomMinFree4=146880 \
-ro.sys.fw.mOomMinFree5=215000 \
-ro.sys.fw.mOomMinFree6=398048
+ro.lmk.swap_util_max=100 \
+ro.lmk.swap_free_low_percentage=10 \
+ro.lmk.psi_partial_stall_ms=250 \
+ro.lmk.psi_complete_stall_ms=700 \
+ro.lmk.thrashing_limit=40 \
+ro.lmk.thrashing_limit_decay=60 \
+ro.lmk.swap_util_max=100 \
+ro.lmk.kill_timeout_ms=100
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -208,7 +198,7 @@ persist.vendor.radio.sib16_support=1 \
 ril.subscription.types=NV,RUIM \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
 ro.telephony.call_ring.multiple=false \
-ro.telephony.default_network=22,22 \
+ro.telephony.default_network=22,20 \
 ro.telephony.use_old_mnc_mcc_format=true \
 service.qti.ims.enabled=1 \
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
@@ -222,25 +212,9 @@ persist.timed.enable=true
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
 
-# Trim
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.qti.sys.fw.use_trim_settings=true \
-ro.vendor.qti.sys.fw.empty_app_percent=50 \
-ro.vendor.qti.sys.fw.trim_empty_percent=100 \
-ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
-
-# UI
-PRODUCT_PROPERTY_OVERRIDES += \
-sys.use_fifo_ui=1
-
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.usb.config.extra=none
-
-# Voltage
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.cutoff_voltage_mv=3200
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
