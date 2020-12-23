@@ -48,6 +48,3 @@
 
 # Thermal
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service\.qti      u:object_r:hal_thermal_default_exec:s0
-
-# Time
-/system/bin/move_time_data\.sh            u:object_r:move-time-data-sh_exec:s0
