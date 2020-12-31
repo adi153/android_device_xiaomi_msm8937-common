@@ -202,7 +202,8 @@ ro.telephony.default_network=22,20 \
 ro.telephony.use_old_mnc_mcc_format=true \
 service.qti.ims.enabled=1 \
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-persist.vendor.radio.aosp_usr_pref_sel=true
+persist.vendor.radio.aosp_usr_pref_sel=true \
+persist.vendor.radio.enableadvancedscan=false
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
