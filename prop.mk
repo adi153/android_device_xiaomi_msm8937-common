@@ -113,11 +113,6 @@ drm.service.enabled=true
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.fm.transmitter=false
 
-# Framebuffer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.protected_contents=true
-
 # Frp
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/config
