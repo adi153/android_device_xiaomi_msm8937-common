@@ -60,7 +60,6 @@ static const char *snet_prop_key[] = {
 	"ro.boot.vbmeta.device_state",
 	"ro.boot.verifiedbootstate",
 	"ro.boot.flash.locked",
-	"ro.boot.selinux",
 	"ro.boot.veritymode",
 	"ro.boot.warranty_bit",
 	"ro.warranty_bit",
@@ -68,7 +67,6 @@ static const char *snet_prop_key[] = {
 	"ro.secure",
 	"ro.build.type",
 	"ro.build.tags",
-	"ro.build.selinux",
 	NULL
 };
 
@@ -77,14 +75,12 @@ static const char *snet_prop_value[] = {
 	"green",
 	"1",
 	"enforcing",
-	"enforcing",
 	"0",
 	"0",
 	"0",
 	"1",
 	"user",
 	"release-keys",
-	"1",
 	NULL
 };
 
@@ -119,31 +115,13 @@ void check_device()
 
     sysinfo(&sys);
 
-    if (sys.totalram > 5072ull * 1024 * 1024) {
-        // from - phone-xhdpi-6144-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.5";
-        heapminfree = "8m";
-        heapmaxfree = "32m";
-    } else if (sys.totalram > 3072ull * 1024 * 1024) {
-        // from - phone-xxhdpi-4096-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.6";
-        heapminfree = "8m";
-        heapmaxfree = "16m";
-    } else {
-        // from - phone-xhdpi-2048-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heaptargetutilization = "0.75";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
-    }
+    // from - phone-xhdpi-2048-dalvik-heap.mk
+    heapstartsize = "8m";
+    heapgrowthlimit = "192m";
+    heapsize = "512m";
+    heaptargetutilization = "0.75";
+    heapminfree = "512k";
+    heapmaxfree = "8m";
 }
 
 void vendor_load_properties()
@@ -156,10 +134,20 @@ void vendor_load_properties()
     property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+    
+    // Configure the HWUI memory limits
+    property_set("ro.hwui.texture_cache_size", "72");
+    property_set("ro.hwui.layer_cache_size", "48");
+    property_set("ro.hwui.r_buffer_cache_size", "8");
+    property_set("ro.hwui.path_cache_size", "32");
+    property_set("ro.hwui.gradient_cache_size", "1");
+    property_set("ro.hwui.drop_shadow_cache_size", "6");
+    property_set("ro.hwui.texture_cache_flushrate", "0.4");
+    property_set("ro.hwui.text_small_cache_width", "1024");
+    property_set("ro.hwui.text_small_cache_height", "1024");
+    property_set("ro.hwui.text_large_cache_width", "2048");
+    property_set("ro.hwui.text_large_cache_height", "1024");
     property_override("ro.control_privapp_permissions", "log");
-    property_override_dual("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.product.build.fingerprint", "google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys");
-
     
     // Workaround SafetyNet
     workaround_snet_properties();
