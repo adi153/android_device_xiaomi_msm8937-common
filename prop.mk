@@ -116,6 +116,10 @@ ro.fm.transmitter=false
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+# Fuse
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.fflag.override.settings_fuse=false
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.gps.qc_nlp_in_use=1 \
