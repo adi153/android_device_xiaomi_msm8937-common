@@ -158,13 +158,13 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
     libdisplayconfig \
-    libdisplayconfig.vendor \
+    libdisplayconfig.qti.vendor \
     libqdMetaData.vendor \
     liboverlay \
-    libqdMetaData.system \
+    libqdMetaData \
     libgenlock \
     libtinyxml \
-    vendor.display.config@1.1_vendor
+    vendor.display.config@2.0.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
